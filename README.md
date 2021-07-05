@@ -15,24 +15,24 @@ hibernate.hbm2ddl.auto=create (or "validate" if you have already launched this p
 hibernate.dialect=org.hibernate.dialect.MySQL8Dialect<br>
 - Configure Local Tomcat server<br>
 - In browser enter this URL: http://localhost:8080/inject to add user roles (USER, ADMIN) and one user with role ADMIN (login: admin@i.ua, password: admin123)
-- Using Postman now you may send such http requests:
- <b>all users</b> (not authenticated, with admin role, with user role):
-    POST /register
- <b>admin</b> only (do not forget Basic Authentication with login and password from previous stage):
-    POST: /cinema-halls
-    POST: /movies
-    POST: /movie-sessions
-    PUT: /movie-sessions/{id}
-    DELETE: /movie-sessions/{id}
-    GET: /users/by-email
-  <b>user</b> only (make sure you have already registered at least one new user and entered correct login/password in Authentication window in Postman):
-    GET: /orders
-    POST: /orders/complete
-    POST: /shopping-carts/movie-sessions
-    GET: /shopping-carts/by-user
-  <b>authenticated</b> (user or admin role):
-    GET: /cinema-halls
-    GET: /movies
-    GET: /movie-sessions/available
-    GET: /movie-sessions/{id}
+- Using Postman now you may send such http requests:<br>
+ <b>all users</b> (not authenticated, with admin role, with user role):<br>
+    - POST /register<br>
+ <b>admin</b> only (do not forget Basic Authentication with login and password from previous stage):<br>
+    - POST: /cinema-halls<br>
+    - POST: /movies<br>
+    - POST: /movie-sessions<br>
+    - PUT: /movie-sessions/{id}<br>
+    - DELETE: /movie-sessions/{id}<br>
+    - GET: /users/by-email<br>
+  <b>user</b> only (make sure you have already registered at least one new user and entered correct login/password in Authentication window in Postman):<br>
+    - GET: /orders<br>
+    - POST: /orders/complete<br>
+    - POST: /shopping-carts/movie-sessions<br>
+    - GET: /shopping-carts/by-user<br>
+  <b>authenticated</b> (user or admin role):<br>
+    - GET: /cinema-halls<br>
+    - GET: /movies<br>
+    - GET: /movie-sessions/available<br>
+    - GET: /movie-sessions/{id}<br>
   <b><i>Hint:</b></i> Dont be scared to send POST methods with empty body: Global Exception Handler will inform you which fields you have to fill
