@@ -27,7 +27,7 @@ public class PerformanceSessionMapper implements RequestDtoMapper<PerformanceSes
     @Override
     public PerformanceSession mapToModel(PerformanceSessionRequestDto dto) {
         PerformanceSession performanceSession = new PerformanceSession();
-        performanceSession.setMovie(performanceService.get(dto.getMovieId()));
+        performanceSession.setMovie(performanceService.get(dto.getPerformanceId()));
         performanceSession.setCinemaHall(stageService.get(dto.getCinemaHallId()));
         performanceSession.setShowTime(LocalDateTime.parse(dto.getShowTime(), formatter));
         return performanceSession;
@@ -36,10 +36,10 @@ public class PerformanceSessionMapper implements RequestDtoMapper<PerformanceSes
     @Override
     public PerformanceSessionResponseDto mapToDto(PerformanceSession performanceSession) {
         PerformanceSessionResponseDto responseDto = new PerformanceSessionResponseDto();
-        responseDto.setMovieSessionId(performanceSession.getId());
-        responseDto.setCinemaHallId(performanceSession.getCinemaHall().getId());
-        responseDto.setMovieId(performanceSession.getMovie().getId());
-        responseDto.setMovieTitle(performanceSession.getMovie().getTitle());
+        responseDto.setPerformanceSessionId(performanceSession.getId());
+        responseDto.setStageId(performanceSession.getCinemaHall().getId());
+        responseDto.setPerformanceId(performanceSession.getPerformance().getId());
+        responseDto.setPerformanceTitle(performanceSession.getPerformance().getTitle());
         responseDto.setShowTime(performanceSession.getShowTime().format(formatter));
         return responseDto;
     }
