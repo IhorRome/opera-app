@@ -16,6 +16,7 @@ hibernate.dialect=org.hibernate.dialect.MySQL8Dialect<br>
 - Configure Local Tomcat server<br>
 - In browser enter this URL: http://localhost:8080/inject to add user roles (USER, ADMIN) and one user with role ADMIN (login: admin@i.ua, password: admin123)
 - Using Postman now you may send such http requests:<br>
+
  <b>all users</b> (not authenticated, with admin role, with user role):<br>
     - POST /register<br>
  <b>admin</b> only (do not forget Basic Authentication with login and password from previous stage):<br>
